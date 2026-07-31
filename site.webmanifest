@@ -1,0 +1,19 @@
+{
+  "name": "Nexora — Premium Digital Studio",
+  "short_name": "Nexora",
+  "description": "Premium digital studio for web design, development and branding.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

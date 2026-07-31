@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" fill="none" role="img" aria-label="Data visualization and reporting">
+  <defs>
+    <linearGradient id="g6-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="g6-accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g6-bg)"/>
+  <!-- Grid lines -->
+  <g stroke="#1E293B" stroke-width="1">
+    <line x1="100" y1="130" x2="100" y2="470"/>
+    <line x1="100" y1="470" x2="700" y2="470"/>
+    <line x1="100" y1="385" x2="700" y2="385"/>
+    <line x1="100" y1="300" x2="700" y2="300"/>
+    <line x1="100" y1="215" x2="700" y2="215"/>
+    <line x1="100" y1="130" x2="700" y2="130"/>
+  </g>
+  <!-- Area chart -->
+  <path d="M100 400 L200 350 L300 380 L400 300 L500 240 L600 280 L700 200 L700 470 L100 470 Z"
+        fill="url(#g6-accent)" opacity="0.18"/>
+  <path d="M100 400 L200 350 L300 380 L400 300 L500 240 L600 280 L700 200"
+        fill="none" stroke="url(#g6-accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Second line -->
+  <path d="M100 440 L200 420 L300 430 L400 390 L500 400 L600 360 L700 340"
+        fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="8 8" opacity="0.7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data points -->
+  <circle cx="400" cy="300" r="6" fill="#FFFFFF"/>
+  <circle cx="500" cy="240" r="6" fill="#FFFFFF"/>
+  <circle cx="700" cy="200" r="7" fill="#38BDF8"/>
+  <!-- Tooltip -->
+  <rect x="470" y="180" width="90" height="46" rx="10" fill="#FFFFFF"/>
+  <rect x="484" y="194" width="50" height="8" rx="4" fill="#0F172A"/>
+  <rect x="484" y="208" width="34" height="7" rx="3.5" fill="#2563EB"/>
+  <!-- Title -->
+  <rect x="100" y="70" width="160" height="16" rx="8" fill="#FFFFFF"/>
+  <rect x="100" y="96" width="110" height="10" rx="5" fill="#64748B"/>
+  <!-- Legend -->
+  <circle cx="540" cy="80" r="6" fill="#2563EB"/>
+  <rect x="554" y="74" width="46" height="10" rx="5" fill="#334155"/>
+  <circle cx="624" cy="80" r="6" fill="#38BDF8"/>
+  <rect x="638" y="74" width="46" height="10" rx="5" fill="#334155"/>
+</svg>

@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Nexora — responsive.css
+   Desktop-first breakpoint overrides. The base layout in style.css targets
+   large screens; these media queries progressively adapt it down to mobile.
+   Breakpoints: 1024 · 992 · 768 (menu) · 560 · 400
+   ========================================================================== */
+
+/* ==========================================================================
+   Large tablets / small laptops  (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .features__grid,
+  .services__grid,
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Tablets  (<= 992px) — stack the two-column sections
+   ========================================================================== */
+@media (max-width: 992px) {
+  :root {
+    --section-y: clamp(3.5rem, 7vw, 5rem);
+  }
+
+  /* Hero */
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__content {
+    order: 2;
+  }
+
+  .hero__visual {
+    order: 1;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+
+  .hero__text {
+    margin-inline: auto;
+  }
+
+  .hero__actions,
+  .hero__stats {
+    justify-content: center;
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about__visual {
+    order: -1;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  /* Contact */
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats */
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl) var(--space-lg);
+  }
+
+  /* Team */
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================================================
+   Mobile navigation  (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Show hamburger, convert menu into a slide-in panel */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 84vw);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 6rem var(--space-lg) var(--space-xl);
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    box-shadow: -24px 0 48px rgba(15, 23, 42, 0.18);
+    transform: translateX(105%);
+    transition: transform var(--transition);
+    overflow-y: auto;
+  }
+
+  .nav__menu.is-open {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav__link {
+    display: block;
+    width: 100%;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__extra {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+    width: 100%;
+    margin-top: var(--space-lg);
+  }
+
+  .nav__extra .btn {
+    width: 100%;
+  }
+
+  /* Backdrop behind the open menu */
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-header) - 1);
+    background: rgba(15, 23, 42, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .nav-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Two-column form fields stack */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials: tighten controls */
+  .testimonial__author {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .testimonial__name {
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Phones  (<= 560px) — single-column everything
+   ========================================================================== */
+@media (max-width: 560px) {
+  .features__grid,
+  .services__grid,
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Full-width hero buttons for comfortable tap targets */
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__stats {
+    gap: var(--space-lg);
+  }
+
+  /* Hide the side nav arrows in the lightbox; keep swipe/keys/dots */
+  .lightbox__nav {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .lightbox__nav--prev {
+    left: 0.5rem;
+  }
+
+  .lightbox__nav--next {
+    right: 0.5rem;
+  }
+
+  .section__header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* ==========================================================================
+   Small phones  (<= 400px)
+   ========================================================================== */
+@media (max-width: 400px) {
+  .stats__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toast-container {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}
+
+/* ==========================================================================
+   Reduced data / hover-less devices
+   Remove hover-only transforms on touch devices to avoid sticky states.
+   ========================================================================== */
+@media (hover: none) {
+  .feature-card:hover,
+  .service-card:hover,
+  .gallery__item:hover,
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Always reveal gallery overlay on touch (no hover) */
+  .gallery__overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(15, 23, 42, 0.8) 0%,
+      transparent 70%
+    );
+  }
+}
+
+/* ==========================================================================
+   Print
+   ========================================================================== */
+@media print {
+  .header,
+  .nav-backdrop,
+  .back-to-top,
+  .progress-bar,
+  .loader,
+  .toast-container,
+  .hero__bg,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  .section {
+    padding-block: 1.5rem;
+    break-inside: avoid;
+  }
+}
