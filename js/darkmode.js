@@ -43,7 +43,7 @@
       toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
       toggle.setAttribute(
         "aria-label",
-        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+        theme === "dark" ? "Kunduzgi rejimga o'tish" : "Tungi rejimga o'tish"
       );
     }
   };

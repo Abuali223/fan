@@ -86,7 +86,7 @@
         ${title ? `<p class="toast__title">${title}</p>` : ""}
         ${message ? `<p class="toast__message">${message}</p>` : ""}
       </div>
-      <button class="toast__close" type="button" aria-label="Dismiss notification">&times;</button>`;
+      <button class="toast__close" type="button" aria-label="Bildirishnomani yopish">&times;</button>`;
 
     const remove = () => {
       toast.classList.add("is-leaving");
@@ -220,7 +220,7 @@
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "slider-dot";
-      dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
+      dot.setAttribute("aria-label", `${i + 1}-sharhga o'tish`);
       dot.addEventListener("click", () => {
         goTo(i);
         restartAutoplay();

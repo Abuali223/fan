@@ -1,96 +1,110 @@
-# Nexora — Premium Digital Studio Website
+# Nexora — Premium Raqamli Studiya Sayti
 
-A production-grade, multi-page marketing website built with **vanilla HTML5,
-CSS3 and JavaScript (ES2023)** — no frameworks, no Bootstrap, no jQuery.
-Minimalist, premium, fully responsive and accessible.
+**Vanilla HTML5, CSS3 va JavaScript (ES2023)** da yozilgan, ishlab chiqarish
+(production) darajasidagi ko'p sahifali marketing sayti — freymvorksiz,
+Bootstrap va jQuery ishlatilmagan. Minimalistik, premium, to'liq moslashuvchan
+va qulay (accessible).
 
-## ✨ Highlights
+## ✨ Asosiy xususiyatlar
 
-- **Modern UI/UX** — minimalist, premium look built on a clean design system
-- **Fully responsive** — mobile, tablet and desktop (CSS Grid + Flexbox)
-- **Dark / Light mode** — respects OS preference, remembers your choice
-- **Accessible (WCAG 2.1 AA)** — semantic HTML, keyboard support, ARIA, skip link, focus states, reduced-motion
-- **SEO-ready** — meta tags, Open Graph/Twitter cards, JSON-LD, `sitemap.xml`, `robots.txt`
-- **Fast** — lazy-loaded images, `IntersectionObserver`, minimal, modular code
-- **Zero dependencies** — everything is hand-written vanilla code
+- **Zamonaviy UI/UX** — toza dizayn tizimi ustiga qurilgan minimalistik, premium ko'rinish
+- **To'liq responsive** — telefon, planshet va kompyuter (CSS Grid + Flexbox)
+- **Tungi / Kunduzgi rejim** — tizim sozlamasini hisobga oladi, tanlovingizni eslab qoladi
+- **Qulay (WCAG 2.1 AA)** — semantik HTML, klaviatura qo'llab-quvvatlashi, ARIA, skip-link, focus holatlari, reduced-motion
+- **SEO uchun tayyor** — meta teglar, Open Graph/Twitter, JSON-LD, `sitemap.xml`, `robots.txt`
+- **Tez** — lazy-loading rasmlar, `IntersectionObserver`, minimal va modulli kod
+- **Bog'liqliksiz** — hamma narsa qo'lda yozilgan vanilla kod
 
-### Interactive features
+### Interaktiv funksiyalar
 
-Loading screen · Sticky navbar · Mobile menu · Scroll progress bar ·
-Scroll-reveal animations · Animated statistics counters · Testimonials slider ·
-FAQ accordion · Gallery filtering · Image lightbox · Form validation ·
-Toast notifications · Back-to-top button · Button ripple effect.
+Yuklanish ekrani · Sticky navbar · Mobil menyu · Skroll progress paneli ·
+Skroll reveal animatsiyalari · Animatsiyali statistika hisoblagichlari ·
+Sharhlar slayderi · FAQ akkordeoni · Galereya filtrlash · Rasm lightbox ·
+Forma validatsiyasi · Toast bildirishnomalari · Yuqoriga qaytish tugmasi ·
+Tugma ripple effekti.
 
-## 📁 Project structure
+## 📁 Loyiha tuzilmasi
 
 ```
 .
-├── index.html              # Home (all 10 sections)
-├── about.html              # Story, values, team
-├── gallery.html            # Filterable portfolio + lightbox
-├── contact.html            # Contact form + details
+├── index.html              # Bosh sahifa (barcha 10 bo'lim)
+├── about.html              # Tarix, qadriyatlar, jamoa
+├── gallery.html            # Filtrlanadigan portfolio + lightbox
+├── contact.html            # Aloqa formasi + ma'lumotlar
 │
 ├── css/
-│   ├── style.css           # Design system + components/sections
-│   ├── responsive.css      # Breakpoints (desktop-first)
-│   └── animations.css      # Keyframes + scroll-reveal + reduced-motion
+│   ├── style.css           # Dizayn tizimi + komponentlar/bo'limlar
+│   ├── responsive.css      # Breakpointlar (desktop-first)
+│   └── animations.css      # Keyframelar + scroll-reveal + reduced-motion
 │
 ├── js/
-│   ├── app.js              # Core: loader, progress, back-to-top, FAQ, slider, toasts
-│   ├── navbar.js           # Sticky header, mobile menu, scroll-spy
-│   ├── darkmode.js         # Theme toggle + persistence
-│   ├── gallery.js          # Filtering + accessible lightbox
-│   ├── animation.js        # Reveal, counters, ripple, lazy-load
-│   └── validation.js       # Form validation + draft autosave + newsletter
+│   ├── app.js              # Asosiy: loader, progress, back-to-top, FAQ, slayder, toast
+│   ├── navbar.js           # Sticky header, mobil menyu, scroll-spy
+│   ├── darkmode.js         # Mavzu almashtirish + saqlash
+│   ├── gallery.js          # Filtrlash + qulay lightbox
+│   ├── animation.js        # Reveal, hisoblagichlar, ripple, lazy-load
+│   └── validation.js       # Forma validatsiyasi + qoralama saqlash + yangiliklar
 │
 ├── assets/
-│   ├── images/             # SVG hero/about visuals + gallery + OG image
+│   ├── images/             # SVG hero/about vizuallar + galereya + OG rasm
 │   ├── icons/              # favicon.svg
-│   └── fonts/              # Font strategy (see fonts/README.md)
+│   └── fonts/              # Shrift strategiyasi (fonts/README.md ga qarang)
+│
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Pages'ga avtomatik deploy
 │
 ├── robots.txt
 ├── sitemap.xml
 └── site.webmanifest
 ```
 
-## 🚀 Running locally
+## 🚀 Lokal ishga tushirish
 
-It's a static site — no build step. Open `index.html` directly, or serve it
-(recommended, so relative paths and the manifest behave):
+Bu statik sayt — build bosqichi kerak emas. `index.html` ni to'g'ridan-to'g'ri
+oching yoki server orqali uzating (tavsiya etiladi):
 
 ```bash
 # Python 3
 python3 -m http.server 8000
 
-# or Node
+# yoki Node
 npx serve .
 ```
 
-Then visit <http://localhost:8000>.
+So'ng <http://localhost:8000> manziliga o'ting.
 
-## 🎨 Customization
+## 🌍 GitHub Pages'da deploy qilish
 
-- **Colors / spacing / radii** — edit the CSS variables in `css/style.css`
-  under `:root` (and `[data-theme="dark"]` for dark mode).
-- **Brand palette**: `#0F172A` · `#2563EB` · `#38BDF8` · `#FFFFFF`.
-- **Font** — Poppins, loaded via Google Fonts. To self-host, see
-  `assets/fonts/README.md`.
-- **Content** — copy is in English and lives directly in the HTML; edit freely.
+Repozitoriyada `.github/workflows/deploy.yml` mavjud. U branchga har push
+qilinganda saytni avtomatik GitHub Pages'ga chiqaradi.
 
-## 🔌 Wiring up the contact form
+Bir martalik sozlash (agar avtomatik yoqilmasa): **Settings → Pages →
+Build and deployment → Source: GitHub Actions** ni tanlang.
 
-The form is validated on the client and currently simulates sending. To make it
-live, add your endpoint in `js/validation.js` (look for the
-`Simulated send` comment) — e.g. `fetch("/api/contact", …)`.
+Jonli havola: `https://<foydalanuvchi>.github.io/<repo>/`.
 
-## 🌐 Before deploying
+## 🎨 Moslashtirish
 
-1. Replace `https://www.nexora.example/` with your real domain in every page's
-   `<link rel="canonical">` / Open Graph tags, plus `sitemap.xml` and
-   `robots.txt`.
-2. (Optional) Generate a PNG version of `assets/images/og-image.svg` for the
-   widest social-preview support.
+- **Ranglar / masofa / radiuslar** — `css/style.css` dagi `:root` (va tungi
+  rejim uchun `[data-theme="dark"]`) CSS o'zgaruvchilarini tahrirlang.
+- **Brend palitrasi**: `#0F172A` · `#2563EB` · `#38BDF8` · `#FFFFFF`.
+- **Shrift** — Poppins, Google Fonts orqali yuklanadi. Self-host uchun
+  `assets/fonts/README.md` ga qarang.
+- **Kontent** — barcha matn o'zbek tilida va to'g'ridan-to'g'ri HTML ichida.
 
-## 📄 License
+## 🔌 Aloqa formasini ulash
 
-Free to use and adapt for your own projects.
+Forma klient tomonida tekshiriladi va hozircha yuborishni simulyatsiya qiladi.
+Uni ishga tushirish uchun `js/validation.js` dagi `Simulated send` izohiga o'z
+endpoint'ingizni qo'shing — masalan `fetch("/api/contact", …)`.
+
+## 🌐 Deploy'dan oldin
+
+1. Har bir sahifadagi `https://www.nexora.example/` ni haqiqiy domeningizga
+   almashtiring (`canonical` / Open Graph teglar, `sitemap.xml`, `robots.txt`).
+2. (Ixtiyoriy) Kengroq ijtimoiy ko'rinish uchun `assets/images/og-image.svg`
+   ning PNG versiyasini yarating.
+
+## 📄 Litsenziya
+
+O'z loyihalaringiz uchun bemalol foydalanish va moslashtirish mumkin.

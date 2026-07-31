@@ -48,7 +48,7 @@
     menu?.classList.add("is-open");
     backdrop?.classList.add("is-visible");
     toggle?.setAttribute("aria-expanded", "true");
-    toggle?.setAttribute("aria-label", "Close menu");
+    toggle?.setAttribute("aria-label", "Menyuni yopish");
     document.body.classList.add("no-scroll");
   };
 
@@ -56,7 +56,7 @@
     menu?.classList.remove("is-open");
     backdrop?.classList.remove("is-visible");
     toggle?.setAttribute("aria-expanded", "false");
-    toggle?.setAttribute("aria-label", "Open menu");
+    toggle?.setAttribute("aria-label", "Menyuni ochish");
     document.body.classList.remove("no-scroll");
   };
 

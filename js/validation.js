@@ -21,19 +21,19 @@
   const RULES = {
     name: {
       test: (v) => v.trim().length >= 2,
-      message: "Please enter your name (at least 2 characters).",
+      message: "Iltimos, ismingizni kiriting (kamida 2 ta belgi).",
     },
     email: {
       test: (v) => EMAIL_RE.test(v.trim()),
-      message: "Please enter a valid email address.",
+      message: "Iltimos, to'g'ri email manzil kiriting.",
     },
     subject: {
       test: (v) => v.trim().length >= 3,
-      message: "Please add a short subject.",
+      message: "Iltimos, qisqa mavzu qo'shing.",
     },
     message: {
       test: (v) => v.trim().length >= 10,
-      message: "Your message should be at least 10 characters.",
+      message: "Xabaringiz kamida 10 ta belgidan iborat bo'lishi kerak.",
     },
   };
 
@@ -54,7 +54,7 @@
 
     if (field.hasAttribute("required") && !value.trim()) {
       valid = false;
-      message = "This field is required.";
+      message = "Bu maydon to'ldirilishi shart.";
     } else if (!rule.test(value)) {
       valid = false;
       message = rule.message;
@@ -133,8 +133,8 @@
       if (!allValid) {
         toast({
           type: "error",
-          title: "Please check the form",
-          message: "Some fields need your attention.",
+          title: "Formani tekshiring",
+          message: "Ba'zi maydonlarga e'tibor bering.",
         });
         form.querySelector(".is-invalid .form-control")?.focus();
         return;
@@ -146,14 +146,14 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.dataset.label = submitBtn.textContent;
-        submitBtn.textContent = "Sending…";
+        submitBtn.textContent = "Yuborilmoqda…";
       }
 
       window.setTimeout(() => {
         toast({
           type: "success",
-          title: "Message sent!",
-          message: "Thanks for reaching out — we'll reply within 24 hours.",
+          title: "Xabar yuborildi!",
+          message: "Murojaatingiz uchun rahmat — 24 soat ichida javob beramiz.",
         });
         form.reset();
         fields.forEach((f) =>
@@ -162,7 +162,7 @@
         clearDraft();
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = submitBtn.dataset.label || "Send message";
+          submitBtn.textContent = submitBtn.dataset.label || "Xabar yuborish";
         }
       }, 900);
     });
@@ -183,8 +183,8 @@
       if (!EMAIL_RE.test(value)) {
         toast({
           type: "error",
-          title: "Invalid email",
-          message: "Please enter a valid email address to subscribe.",
+          title: "Noto'g'ri email",
+          message: "Obuna bo'lish uchun to'g'ri email manzil kiriting.",
         });
         input?.focus();
         return;
@@ -192,8 +192,8 @@
 
       toast({
         type: "success",
-        title: "Subscribed!",
-        message: "You're on the list. Watch your inbox for updates.",
+        title: "Obuna bo'ldingiz!",
+        message: "Siz ro'yxatdasiz. Yangiliklar uchun pochtangizni kuzating.",
       });
       form.reset();
     });
