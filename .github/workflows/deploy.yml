@@ -1,11 +1,16 @@
 name: Deploy to GitHub Pages
 
 # Static site → GitHub Pages.
-# Runs on every push to the working branch, and can be triggered manually.
+#
+# NOTE: GitHub requires Pages to be enabled once, manually, before any
+# workflow can deploy (the automation token cannot create the Pages site
+# itself). One-time setup:
+#   Settings → Pages → Build and deployment → Source → "GitHub Actions".
+# After that this workflow deploys automatically on every push to main,
+# and can also be run on demand from the Actions tab.
 on:
   push:
     branches:
-      - claude/professional-website-build-e5a0bp
       - main
   workflow_dispatch:
 
