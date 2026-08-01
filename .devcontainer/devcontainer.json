@@ -1,0 +1,22 @@
+{
+  "name": "Bilimdon",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+
+  // Bilimdon serveri shu portda ishlaydi. Codespaces uni avtomatik ochadi.
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Bilimdon",
+      "onAutoForward": "openPreview"
+    }
+  },
+
+  // Codespace ochilganda "npm start" ni bir marta eslatib turadi (izohli).
+  "postCreateCommand": "echo '✅ Tayyor! Serverni ishga tushirish uchun terminalga yozing:  npm start'",
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  }
+}
