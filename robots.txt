@@ -1,6 +1,0 @@
-# robots.txt for Nexora
-# Replace the domain below with your production domain.
-User-agent: *
-Allow: /
-
-Sitemap: https://www.nexora.example/sitemap.xml

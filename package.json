@@ -1,0 +1,17 @@
+{
+  "name": "bilimdon",
+  "version": "1.0.0",
+  "description": "Bilimdon — IT, Kimyo, Matematika va Ona tili fanlari uchun onlayn ta'lim platformasi (zero-dependency: faqat Node.js ichki modullari).",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-sqlite server/server.js",
+    "dev": "node --watch --experimental-sqlite server/server.js",
+    "seed": "node --experimental-sqlite server/seed.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "keywords": ["education", "lms", "uzbek", "nodejs", "sqlite"],
+  "license": "MIT"
+}
